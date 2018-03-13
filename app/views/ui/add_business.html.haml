@@ -1,0 +1,21 @@
+.container
+  .p-4.col-6.offset-1
+    %form
+      .form-group
+        %label(for="full_name") Full Name
+        %input.form-control#full_name(type="text" placeholder="Enter business name")
+
+      .form-group
+        %label(for="description") Description
+        %textarea.form-control#description(rows="7" placeholder="Describe the business")
+
+      .form-group
+        %label(for="categories") Business Categories
+        %select.form-control#categories
+          %option Food & Beverages
+          %option Business Services
+          %option Shopping
+          %option Repair Services
+
+      %div
+        %button.btn.btn-primary.px-5(type="submit") Submit

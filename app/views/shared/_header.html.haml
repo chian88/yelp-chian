@@ -1,0 +1,21 @@
+.container
+  %nav.navbar.navbar-expand-lg.navbar-light
+    = link_to "Yelp", root_path, { class: "navbar-brand col-2" }
+    %button.navbar-toggler(type="button" data-toggle="collapse" data-target="#login-menu")
+      %span.navbar-toggler-icon
+
+    - if current_user
+      .collapse.navbar-collapse#login-menu
+        .navbar-nav.ml-auto
+          %span.mr-4 Welcome, #{current_user.full_name}
+
+
+        = link_to 'Sign Out', sign_out_path, class: 'nav-item nav-link btn btn-dark text-light'      
+
+    - else
+      .collapse.navbar-collapse#login-menu
+        .navbar-nav.ml-auto
+          = link_to 'Log in', sign_in_path, class: 'nav-item nav-link active mr-4 btn btn-dark text-light'
+
+          = link_to 'Sign Up', sign_up_path, class: 'nav-item nav-link btn btn-dark text-light'      
+

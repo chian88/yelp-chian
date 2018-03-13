@@ -1,0 +1,69 @@
+.container
+  .row.p-3
+    %div
+      %h2= @business.full_name
+      %p Rating <span>4.5</span> / 5 with <span>6</span> reviews
+      %p= @business.description
+
+    .ml-auto
+      = link_to "Write a Review", new_review_path(business_id: @business.id), { class: 'btn btn-danger' }
+
+    %img.d-block.w-100(src="http://via.placeholder.com/2000x500" alt="First slide")
+  .row.p-3
+    .col-8
+      %h3 Reviews for #{@business.full_name}
+      - if @business.reviews.empty?
+        .border-top.p-2
+          .row
+            %p No reviews for #{@business.full_name}
+      - else      
+        - @business.reviews.each do |review|
+          .border-top.p-2
+            .row.no-gutters
+              .col-4
+                .row
+                  %img.col-5(src="http://via.placeholder.com/50x50")
+                  .col-7
+                    %h5.txt-small.no-margin= review.user.full_name
+                    %p.txt-tiny.no-margin= review.user.location
+                    %p.txt-tiny.no-margin 58 friends
+                    %p.txt-tiny.no-margin 114 reviews
+                    %p.txt-tiny.no-margin 141 photos
+
+              .col-7
+                %p Rating #{review.rating} out of 5 stars on <span class="text-info">#{format_date(review.created_at)}</span>
+                %p= review.content
+              .col-1
+                = link_to review_path(review), method: 'delete' do
+                  %img.icon-sm(src="/open-iconic/svg/trash.svg")
+                = link_to edit_review_path do
+                  %img.icon-sm(src="/open-iconic/svg/pencil.svg")
+
+    .col-4.bg-light.p-3.h-50.rounded
+      .row.m-3
+        .col-2
+          %span.text-center
+            %img.icon-small.mx-auto(src="/open-iconic/svg/timer.svg")
+        .col-8
+          %p.txt-small.no-margin Today 10:00 am - 10:00 pm
+          %p.txt-small.no-margin.font-weight-bold Open Now
+
+      .row.m-3
+        .col-2
+          %span.text-center
+            %img.icon-small.mx-auto(src="/open-iconic/svg/dollar.svg")
+        .col-8
+          %p.txt-small.no-margin Price Range: <span class="font-weight-bold">Moderate</span>
+      .row.m-3
+        .col-2
+          %span.text-center
+            %img.icon-small.mx-auto(src="/open-iconic/svg/check.svg")
+        .col-8
+          %p.txt-small.no-margin Work here? <a href="#" class="font-weight-bold">Claim this business</a>
+
+      .row.m-3
+        .col-2
+          %span.text-center
+            %img.icon-small.mx-auto(src="/open-iconic/svg/timer.svg")
+        .col-8
+          %p.txt-small.no-margin See businesses at this location

@@ -1,0 +1,18 @@
+.container
+  .row
+    .col-4.p-3.my-5
+      %h4.text-center.text-danger Sign Up for Yelp
+      %p.font-weight-bold.text-center Connect with great local businesses
+      %small.text-center By signing up, you agree to Yelp's Terms of Service and Privacy Policy.
+      %form
+        .row
+          .col-12.mt-3
+            %input.form-control.form-control-sm(type="text" name="name" placeholder="Full Name")
+          .col-12.mt-3
+            %input.form-control.form-control-sm(type="text" name="location" placeholder="Location")
+          .col-12.mt-3
+            %input.form-control.form-control-sm(type="email" name="email" placeholder="Email")
+          .col-12.mt-3
+            %input.form-control.form-control-sm(type="password" name="password" placeholder="Password")
+          .col-12.mt-3
+            %input.btn.btn-danger.px-5(type="submit" value="Sign Up")

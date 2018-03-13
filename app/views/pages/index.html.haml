@@ -1,0 +1,32 @@
+.row.p-3.border-bottom
+  %h2.mx-auto Yelp Kuala Lumpur
+
+.row.p-2
+  = link_to "Add a Business", new_business_path, class: "btn btn-primary mx-auto mt-3"
+  
+
+.container.my-5
+  .row
+    = link_to businesses_path(category: 'repair_services'), {class: 'col-3' }  do
+      .card.p-5
+        %img.card-img-top.icon.mx-auto(src="/open-iconic/svg/wrench.svg")
+        .card-body.mx-auto.p-0.pt-5
+          %h5.card-title Repair Services
+
+    = link_to businesses_path(category: 'shopping'), { class: 'col-3'} do  
+      .card.p-5
+        %img.card-img-top.icon.mx-auto(src="/open-iconic/svg/cart.svg")
+        .card-body.mx-auto.p-0.pt-5
+          %h5.card-title Shopping  
+
+    = link_to businesses_path(category: 'business_services'), { class: 'col-3'} do
+      .card.p-5
+        %img.card-img-top.icon.mx-auto(src="/open-iconic/svg/briefcase.svg")
+        .card-body.mx-auto.p-0.pt-5
+          %h5.card-title Business Services 
+
+    = link_to businesses_path(category: 'food_beverages'), { class: 'col-3'} do
+      .card.p-5
+        %img.card-img-top.icon.mx-auto(src="/open-iconic/svg/droplet.svg")
+        .card-body.mx-auto.p-0.pt-5
+          %h5.card-title Food & Beverages

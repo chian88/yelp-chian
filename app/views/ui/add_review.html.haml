@@ -1,0 +1,31 @@
+.container
+  .p-4
+  %h2 Carma Asian Tapas
+  .row
+    .col-8
+      %form
+        .form-group
+          %textarea.form-control.no-resize#review_content(rows="7"  placeholder="Write your review here")
+
+        .form-check.form-check-inline
+          %input#rating_1(type="radio" name="rating")
+          %label.form-check-label(for="rating_1") 1 Star
+
+        .form-check.form-check-inline
+          %input#rating_2(type="radio" name="rating")
+          %label.form-check-label(for="rating_2") 2 Star
+
+        .form-check.form-check-inline
+          %input#rating_3(type="radio" name="rating")
+          %label.form-check-label(for="rating_3") 3 Star
+
+        .form-check.form-check-inline
+          %input#rating_4(type="radio" name="rating")
+          %label.form-check-label(for="rating_4") 4 Star
+
+        .form-check.form-check-inline
+          %input#rating_5(type="radio" name="rating")
+          %label.form-check-label(for="rating_5") 5 Star
+
+        %input.btn.btn-danger.d-block.my-4(type="submit" value="Submit Review")
+

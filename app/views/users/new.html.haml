@@ -1,0 +1,18 @@
+.container
+  .row
+    .col-4.p-3.my-5
+      %h4.text-center.text-danger Sign Up for Yelp
+      %p.font-weight-bold.text-center Connect with great local businesses
+      %small.text-center By signing up, you agree to Yelp's Terms of Service and Privacy Policy.
+      = form_for User.new do |f|
+        .row
+          .col-12.mt-3
+            = f.text_field :full_name, class: "form-control form-control-sm", placeholder: "Full Name"
+          .col-12.mt-3
+            = f.text_field :location, class: "form-control form-control-sm", placeholder: "Location"
+          .col-12.mt-3
+            = f.email_field :email, class: "form-control form-control-sm", placeholder: "Email Address"
+          .col-12.mt-3
+            = f.password_field :password, class: "form-control form-control-sm", placeholder: "Password"
+          .col-12.mt-3
+            = f.submit "Sign Up", class: 'btn btn-danger px-5'

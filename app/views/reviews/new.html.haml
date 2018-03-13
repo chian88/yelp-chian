@@ -1,0 +1,33 @@
+.container
+  .p-4
+  %h2= @business.full_name
+  .row
+    .col-8
+      = form_for @review do |f|
+        = hidden_field_tag "business_id", "#{@business.id}"
+
+        .form-group
+          = f.text_area :content, { class: 'form-control no-resize', rows: '7', placeholder: 'Write your review here' } 
+
+        .form-check.form-check-inline
+          = f.radio_button :rating , "1", id: "rating_1"
+          = f.label :rating, '1 Star', { class: 'form-check-label', for: 'rating_1' }   
+
+        .form-check.form-check-inline
+          = f.radio_button :rating , "2", id: "rating_2"
+          = f.label :rating, '2 Star', { class: 'form-check-label', for: 'rating_2' }  
+
+        .form-check.form-check-inline
+          = f.radio_button :rating , "3", id: "rating_3"
+          = f.label :rating, '3 Star', { class: 'form-check-label', for: 'rating_3' }  
+
+        .form-check.form-check-inline
+          = f.radio_button :rating , "4", id: "rating_4"
+          = f.label :rating, '4 Star', { class: 'form-check-label', for: 'rating_4' }   
+
+        .form-check.form-check-inline
+          = f.radio_button :rating , "5", id: "rating_5"
+          = f.label :rating, '5 Star', { class: 'form-check-label', for: 'rating_5' }
+
+        = f.submit 'Submit Review', class: 'btn btn-danger d-block my-4'
+

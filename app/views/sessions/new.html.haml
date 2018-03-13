@@ -1,0 +1,16 @@
+.container
+  .row
+    .col-4.p-3.my-5
+      %h4.text-center.text-danger Sign In to Yelp
+      %p.font-weight-bold.text-center New to Yelp? <a href="#">Sign Up</a>
+      %small.text-center By logging in, you agree to Yelp’s Terms of Service and Privacy Policy.
+      = form_tag sessions_path do
+        .row
+          .col-12.mt-3
+            = email_field_tag :email, nil, class: 'form-control form-control-sm', placeholder: 'Email'
+
+          .col-12.mt-3
+            = password_field_tag :password, nil, class: 'form-control form-control-sm', placeholder: 'password'
+
+          .col-12.mt-3
+            = submit_tag "Log In", class: 'btn btn-danger px-5'

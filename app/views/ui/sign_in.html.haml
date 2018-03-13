@@ -1,0 +1,17 @@
+.container
+  .row
+    .col-4.p-3.my-5
+      %h4.text-center.text-danger Sign In to Yelp
+      %p.font-weight-bold.text-center New to Yelp? <a href="#">Sign Up</a>
+      %small.text-center By logging in, you agree to Yelp’s Terms of Service and Privacy Policy.
+
+      %form
+        .row
+          .col-12.mt-3
+            %input.form-control.form-control-sm(type="email" name="name" placeholder="Email")
+
+          .col-12.mt-3
+            %input.form-control.form-control-sm(type="password" name="password" placeholder="password")
+
+          .col-12.mt-3
+            %input.btn.btn-danger.px-5(type="submit" value="Log In")

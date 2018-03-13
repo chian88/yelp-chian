@@ -1,0 +1,16 @@
+.container
+  .p-4.col-6.offset-1
+    = form_for @business do |f|
+      .form-group
+        = f.label :full_name, 'Full Name'
+        = f.text_field :full_name, { class: 'form-control', placeholder: 'Enter business name'}
+
+      .form-group
+        = f.label :description, 'Description'
+        = f.text_area :description, { class: 'form-control', placeholder: 'Describe the business', rows: '7'}
+
+      .form-group
+        = f.label :categories, 'Business Categories'
+        = f.select :categories, [["Food & Beverages", "food_beverages"], ["Business Services", "business_services"], ["Shopping", "shopping"], ["Repair Services", "repair_services"]], {}, class: "form-control"
+
+      = f.submit "Create a New Business", { class: 'btn btn-primary px-5'}
